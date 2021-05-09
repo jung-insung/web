@@ -74,7 +74,7 @@ public class ArticleController {
         }
     }
     /**
-     * 게시글 변경 화면
+     * 게시글 수정 화면
      */
     public void updateArticleForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -84,13 +84,13 @@ public class ArticleController {
     }
 
     /**
-     * 게시글 변경 액션
+     * 게시글 수정 액션
      */
     public void updateArticle(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
         Article article = new Article();
-        article.setArticleId(607);
+        article.setArticleId(617);
         article.setTitle(request.getParameter("title"));
         article.setContent(request.getParameter("content"));
         article.setUserId(584);
@@ -121,7 +121,7 @@ public class ArticleController {
             throws IOException {
 
         try {
-            articleDao.deleteArticle(612, 584);
+            articleDao.deleteArticle(619, 584);
             response.sendRedirect(request.getContextPath() + "/mvc/article/articleList");
         } catch (DuplicateKeyException e) {
             response.sendRedirect(request.getContextPath() +
